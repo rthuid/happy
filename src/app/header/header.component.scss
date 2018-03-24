@@ -1,0 +1,8 @@
+@import '~sass/variables';
+@import '~sass/mixins';
+.main-header{
+    @include gradient();
+}
+.app-container{
+    padding: $padding;
+}

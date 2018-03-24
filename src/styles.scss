@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~sass/variables';
+.app-container{
+    width: 1010px;
+    max-width: 100%;
+    margin: auto;
+    padding-left: $padding;
+    padding-right: $padding;
+}
