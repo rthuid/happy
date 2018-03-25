@@ -2,7 +2,7 @@
 @import '~sass/mixins';
 .main-header{
     @include gradient();
-    border-bottom: 1px solid $color-border;
+    border-bottom: 1px solid $color-border-dark;
 }
 .header-container{    
     @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:stretch);
@@ -13,7 +13,9 @@
     .right-sec{
         @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:stretch);
         .drop-wrap{
+            color: $color-1;
             position: relative;
+            padding-left: $padding*1.5;
             @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
             .dropdown{
                 @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
@@ -21,7 +23,14 @@
                 .drop-down{
                     cursor: pointer;
                     position: initial;
+                    font-weight: bold;
                     @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
+                    padding:$padding / 2;
+                    border-radius: $border-radius;
+                    &:hover{
+                        background: transparentize($color-white,.95);
+                        @include box-shadow($top:0, $left:0px, $blur:4px, $color:rgba(0, 0, 0, 0.05), $inset: true);
+                    }
                     .pic{
                         width: 40px;
                         height: 40px;
@@ -30,14 +39,73 @@
                         border-radius: 50px;
                         border: 1px solid $color-border-light;
                         display: inline-block;
+                        margin-right: $padding;
+                    }
+                    &:after{
+                        margin-left: $padding/2;
+                        margin-top: $padding/2;
+                    }
+                }
+                &.show {
+                    .drop-down{
+                        background: transparentize($color-white,.95);
+                        @include box-shadow($top:0, $left:0px, $blur:4px, $color:rgba(0, 0, 0, 0.05), $inset: true);
                     }
                 }
                 .dropdown-menu{
                     top: 100% !important;
+                    border-color: $color-border;
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        border-bottom: 10px solid $color-white;
+                        border-left: 10px transparent solid;
+                        border-right: 10px transparent solid;
+                        bottom: 100%;
+                        right: $padding ;
+                        margin-bottom: -1px;
+                    }
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        border-bottom: 10px solid $color-border;
+                        border-left: 10px transparent solid;
+                        border-right: 10px transparent solid;
+                        bottom: 100%;
+                        right: $padding ;
+                    }
                 }
             }
         }
-        
-              
+        .notif-wrap{
+            color: $color-1;
+            position: relative;
+            padding: 0 $padding*1.5;
+            @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
+            &:before{
+                content: '';
+                position: absolute;
+                display: block;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                height: 30px;
+                width: 1px;
+                background: transparentize($color-1 , .8);
+                margin: auto;
+            }
+            &:after{
+                content: '';
+                position: absolute;
+                display: block;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                height: 30px;
+                width: 1px;
+                background: transparentize($color-1 , .8);
+                margin: auto;
+            }
+        }  
     }
 }

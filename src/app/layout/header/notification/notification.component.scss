@@ -1,0 +1,66 @@
+@import '~sass/variables';
+@import '~sass/mixins';
+
+.dropdown{
+    @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
+    position: initial;
+    .drop-down{
+        cursor: pointer;
+        position: initial;
+        font-weight: bold;
+        @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
+        padding: $padding/2;
+        border-radius: $border-radius;
+        min-height: 50px;
+        i{
+            font-size: $font-size-default + 5;
+        }
+        &:hover{
+            background: transparentize($color-white,.95);
+            @include box-shadow($top:0, $left:0px, $blur:4px, $color:rgba(0, 0, 0, 0.05), $inset: true);
+        }
+        .pic{
+            width: 40px;
+            height: 40px;
+            background-position: center !important;
+            background-size: cover !important;
+            border-radius: 50px;
+            border: 1px solid $color-border-light;
+            display: inline-block;
+            margin-right: $padding;
+        }
+        &:after{
+            margin-left: $padding/2;
+            margin-top: $padding/2;
+        }
+    }
+    &.show {
+        .drop-down{
+            background: transparentize($color-white,.95);
+            @include box-shadow($top:0, $left:0px, $blur:4px, $color:rgba(0, 0, 0, 0.05), $inset: true);
+        }
+    }
+    .dropdown-menu{
+        top: 100% !important;
+        width:300px;
+        &:after{
+            content: '';
+            position: absolute;
+            border-bottom: 10px solid $color-white;
+            border-left: 10px transparent solid;
+            border-right: 10px transparent solid;
+            bottom: 100%;
+            right: $padding ;
+            margin-bottom: -1px;
+        }
+        &:before{
+            content: '';
+            position: absolute;
+            border-bottom: 10px solid $color-border;
+            border-left: 10px transparent solid;
+            border-right: 10px transparent solid;
+            bottom: 100%;
+            right: $padding ;
+        }
+    }
+}

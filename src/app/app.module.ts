@@ -8,6 +8,7 @@ import { HeaderComponent } from './layout/header/header.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { PostListingComponent } from './pages/post-listing/post-listing.component';
+import { NotificationComponent } from './layout/header/notification/notification.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { PostListingComponent } from './pages/post-listing/post-listing.componen
     AppComponent,
     HeaderComponent,
     UserProfileComponent,
-    PostListingComponent
+    PostListingComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,

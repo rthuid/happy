@@ -7,8 +7,11 @@ $color-1: #3259ad;
 $color-2: #616770;
 $color-black: #363636;
 $color-white: #fff;
-$color-border: transparentize($color-black,.7);
+$color-border-dark: transparentize($color-black,.7);
+$color-border: transparentize($color-black,.85);
 $color-border-light: transparentize($color-black,.9);
+$color-bg: #e6ecf0;
+$color-bg-light: #f1f5f7;
 
 //font-size
 $font-size-small: 14px !default;

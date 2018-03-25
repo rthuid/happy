@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~sass/variables';
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-body{
+body.body{
     font-family: $font-default;
-    font-size: $font-default;
+    font-size: $font-size-default;
     color: $color-black;
 }
 .app-container{
