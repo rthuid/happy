@@ -12,18 +12,32 @@
     }
     .right-sec{
         @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:stretch);
-        .drop-down{
-            cursor: pointer;
+        .drop-wrap{
+            position: relative;
             @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
-            .pic{
-                width: 40px;
-                height: 40px;
-                background-position: center !important;
-                background-size: cover !important;
-                border-radius: 50px;
-                border: 1px solid $color-border-light;
-                display: inline-block;
+            .dropdown{
+                @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
+                position: initial;
+                .drop-down{
+                    cursor: pointer;
+                    position: initial;
+                    @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
+                    .pic{
+                        width: 40px;
+                        height: 40px;
+                        background-position: center !important;
+                        background-size: cover !important;
+                        border-radius: 50px;
+                        border: 1px solid $color-border-light;
+                        display: inline-block;
+                    }
+                }
+                .dropdown-menu{
+                    top: 100% !important;
+                }
             }
-        }        
+        }
+        
+              
     }
 }

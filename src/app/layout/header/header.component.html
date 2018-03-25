@@ -5,17 +5,19 @@
             <a routerLink="/"><img src="../../assets/images/happy-equities-logo.png" alt="logo"></a>          
         </div>
         <div class="right-sec">
-            <div ngbDropdown placement="bottom-right" class="d-inline-block">
-                <div class="drop-down" id="userPro" ngbDropdownToggle>
-                  <div class="pic" style="background-image: url(../../assets/images/pro-pic-01.jpg)"></div>
-                  Toggle dropup
+          <div class="drop-wrap">
+              <div ngbDropdown placement="bottom-right" class="d-inline-block">
+                  <div class="drop-down" id="userPro" ngbDropdownToggle>
+                    <div class="pic" style="background-image: url(../../assets/images/pro-pic-01.jpg)"></div>
+                    Toggle dropup
+                  </div>
+                  <div ngbDropdownMenu aria-labelledby="userPro">
+                    <button class="dropdown-item"><a routerLink="/user">View Profile</a></button>
+                    <button class="dropdown-item">Another Action</button>
+                    <button class="dropdown-item">Logout</button>
+                  </div>
                 </div>
-                <div ngbDropdownMenu aria-labelledby="userPro">
-                  <button class="dropdown-item"><a routerLink="/user">View Profile</a></button>
-                  <button class="dropdown-item">Another Action</button>
-                  <button class="dropdown-item">Logout</button>
-                </div>
-              </div>
+          </div>            
         </div>
     </div>    
   </div>
