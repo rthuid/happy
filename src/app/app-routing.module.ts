@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BrowserModule } from '@angular/platform-browser';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { PostListingComponent } from './pages/post-listing/post-listing.component';
 
 const routes: Routes = [
   { path: 'user', component: UserProfileComponent },
-  { path: 'user', component: UserProfileComponent }
+  { path: 'home', component: PostListingComponent },
+  { path: '', component: PostListingComponent }
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes), BrowserModule ],
+  imports: [ RouterModule.forRoot(routes)],
   exports: [ RouterModule ],
   declarations: []
 })

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppRoutingModule } from '../../app-routing.module';
-// import { RouterLink } from '@angular/router';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-header',

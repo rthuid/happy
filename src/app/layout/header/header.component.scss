@@ -4,6 +4,7 @@
     @include gradient();
     border-bottom: 1px solid transparentize($color-black, .7);
 }
-.app-container{
-    padding: $padding*1.5 0;
+.header-container{
+    padding-top: $padding*1.5;
+    padding-bottom: $padding*1.5;
 }

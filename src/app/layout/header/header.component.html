@@ -1,12 +1,20 @@
 <header class="main-header">
   <div class="app-container">
-    <div class="brand-logo">
-        <a routerLink="/home"><img src="../../assets/images/happy-equities-logo.png" alt="logo"></a>
-      
-    </div>
+    <div class="header-container">
+        <div class="brand-logo">
+            <a routerLink="/"><img src="../../assets/images/happy-equities-logo.png" alt="logo"></a>          
+        </div>
+        <div class="right-sec">
+            <div ngbDropdown placement="bottom-right" class="d-inline-block">
+                <button class="btn btn-outline-primary" id="userPro" ngbDropdownToggle>Toggle dropup</button>
+                <div ngbDropdownMenu aria-labelledby="userPro">
+                  <button class="dropdown-item"><a routerLink="/user">View Profile</a></button>
+                  <button class="dropdown-item">Another Action</button>
+                  <button class="dropdown-item">Something else is here</button>
+                </div>
+              </div>
+        </div>
+    </div>    
   </div>
 </header>
-<nav>
-    <a routerLink="/user">Heroes</a>
-  </nav>
 <router-outlet></router-outlet>

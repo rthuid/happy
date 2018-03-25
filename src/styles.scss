@@ -1,7 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~sass/variables';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body{
+    font-family: $font-default;
+    font-size: $font-default;
+    color: $color-black;
+}
 .app-container{
-    width: 1010px;
+    width: 1020px;
     max-width: 100%;
     margin: auto;
     padding-left: $padding;
