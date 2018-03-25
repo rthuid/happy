@@ -6,11 +6,14 @@
         </div>
         <div class="right-sec">
             <div ngbDropdown placement="bottom-right" class="d-inline-block">
-                <button class="btn btn-outline-primary" id="userPro" ngbDropdownToggle>Toggle dropup</button>
+                <div class="drop-down" id="userPro" ngbDropdownToggle>
+                  <div class="pic" style="background-image: url(../../assets/images/pro-pic-01.jpg)"></div>
+                  Toggle dropup
+                </div>
                 <div ngbDropdownMenu aria-labelledby="userPro">
                   <button class="dropdown-item"><a routerLink="/user">View Profile</a></button>
                   <button class="dropdown-item">Another Action</button>
-                  <button class="dropdown-item">Something else is here</button>
+                  <button class="dropdown-item">Logout</button>
                 </div>
               </div>
         </div>
