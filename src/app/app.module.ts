@@ -9,6 +9,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { PostListingComponent } from './pages/post-listing/post-listing.component';
 import { NotificationComponent } from './layout/header/notification/notification.component';
+import { MainSearchComponent } from './layout/header/main-search/main-search.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { NotificationComponent } from './layout/header/notification/notification
     HeaderComponent,
     UserProfileComponent,
     PostListingComponent,
-    NotificationComponent
+    NotificationComponent,
+    MainSearchComponent
   ],
   imports: [
     BrowserModule,

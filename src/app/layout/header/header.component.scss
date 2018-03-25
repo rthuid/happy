@@ -3,8 +3,11 @@
 .main-header{
     @include gradient();
     border-bottom: 1px solid $color-border-dark;
+    a:hover{
+        text-decoration: none;
+    }
 }
-.header-container{    
+.header-container{
     @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:stretch);
     .brand-logo{
         padding-top: $padding*1.5;
@@ -89,9 +92,10 @@
                 left: 0;
                 top: 0;
                 bottom: 0;
-                height: 30px;
-                width: 1px;
-                background: transparentize($color-1 , .8);
+                height: 25px;
+                width: 2px;
+                background: transparentize($color-white , .9);
+                border-right: 1px solid $color-border-light;
                 margin: auto;
             }
             &:after{
@@ -101,11 +105,34 @@
                 right: 0;
                 top: 0;
                 bottom: 0;
-                height: 30px;
-                width: 1px;
-                background: transparentize($color-1 , .8);
+                height: 25px;
+                width: 2px;
+                background: transparentize($color-white , .9);
+                border-right: 1px solid $color-border-light;
                 margin: auto;
             }
+        }
+        .menus-wrap{
+            color: $color-1;
+            position: relative;
+            padding: 0 $padding*1.5;
+            @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
+            a{
+                line-height: 40px;
+                padding:$padding / 2;
+                border-radius: $border-radius;
+                font-weight: bold;
+                display: block;
+                &:hover{                    
+                    background: transparentize($color-white,.95);
+                    @include box-shadow($top:0, $left:0px, $blur:4px, $color:rgba(0, 0, 0, 0.05), $inset: true);
+                }
+            }
+        }        
+        .search-wrap{
+            color: $color-1;
+            position: relative;
+            @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
         }  
     }
 }

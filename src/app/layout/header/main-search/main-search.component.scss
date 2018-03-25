@@ -1,0 +1,20 @@
+@import '~sass/variables';
+@import '~sass/mixins';
+.main-search{
+    position: relative;
+    input{
+        padding-right: 40px;
+    }
+    button{
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: none;
+        border: 0;
+        padding: 0 $padding;
+        font-size: $font-size-large;
+        color: $color-2;
+        cursor: pointer;
+    }
+}
