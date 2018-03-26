@@ -10,6 +10,9 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
 import { PostListingComponent } from './pages/post-listing/post-listing.component';
 import { NotificationComponent } from './layout/header/notification/notification.component';
 import { MainSearchComponent } from './layout/header/main-search/main-search.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -19,12 +22,14 @@ import { MainSearchComponent } from './layout/header/main-search/main-search.com
     UserProfileComponent,
     PostListingComponent,
     NotificationComponent,
-    MainSearchComponent
+    MainSearchComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

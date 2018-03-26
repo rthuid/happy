@@ -5,12 +5,23 @@ body.body{
     font-family: $font-default;
     font-size: $font-size-default;
     color: $color-black;
+    background: $color-bg;
     a{
         color: $color-1;
     }
     .dropdown-menu{
         font-size: $font-size-small;
     }
+    .row {
+        margin-right: -$padding*3/4;
+        margin-left: -$padding*3/4;
+      
+        & > [class^="col-"],
+        & > [class*=" col-"] {
+          padding-right: $padding*3/4;
+          padding-left: $padding*3/4;
+        }
+      }
 }
 .app-container{
     width: 1020px;

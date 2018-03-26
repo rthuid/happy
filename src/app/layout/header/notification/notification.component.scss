@@ -14,6 +14,19 @@
         min-height: 50px;
         i{
             font-size: $font-size-default + 5;
+            position: relative;
+            .has{
+                font-family: $font-default;
+                font-weight: bold;
+                padding: $padding/4;
+                border-radius:$border-radius;
+                color: $color-white;
+                background: $color-red;
+                position: absolute;
+                bottom: 60%;
+                left: 60%;
+                font-size: 65%;
+            }
         }
         &:hover{
             background: transparentize($color-white,.95);
@@ -79,9 +92,10 @@
             overflow: auto;
             >li{
                 padding: $padding/2 $padding;
-                @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:stretch);
-                &:not(:last-child){
-                    border-bottom: 1px solid $color-border;
+                @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
+                border-bottom: 1px solid $color-border-light;
+                &:first-child{
+                    border-top: 1px solid $color-border-light;
                 }
                 &:hover{
                     background: $color-bg-light;
@@ -97,9 +111,20 @@
                     display: inline-block;
                     margin-right: $padding;
                 }
-                .name{
-                    font-weight: bold;
-                }
+                .right{
+                    @include flex-self($value:1 1 auto);
+                    .name{
+                        font-weight: bold;
+                    }
+                    .body2{
+                        font-size: 90%;
+                        color: $color-2;
+                        i{
+                            color: $color-1;
+                            padding-right: $padding/4;
+                        }
+                    }
+                }                
             }            
         }
         .footer{

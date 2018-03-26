@@ -3,6 +3,7 @@
 .main-header{
     @include gradient();
     border-bottom: 1px solid $color-border-dark;
+    margin-bottom: $padding*1.5;
     a:hover{
         text-decoration: none;
     }
