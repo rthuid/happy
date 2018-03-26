@@ -27,6 +27,7 @@
                     cursor: pointer;
                     position: initial;
                     font-weight: bold;
+                    text-transform:capitalize;
                     @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
                     padding:$padding / 2;
                     border-radius: $border-radius;
@@ -77,6 +78,21 @@
                         bottom: 100%;
                         right: $padding ;
                     }
+                    ul{
+                        padding:0;
+                        list-style: none;
+                        margin: 0;
+                        li{
+                            a{
+                                display: block;
+                                padding: $padding/2 $padding;
+                                color: $color-black;
+                                &:hover{
+                                    background: $color-bg-light;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -123,6 +139,7 @@
                 border-radius: $border-radius;
                 font-weight: bold;
                 display: block;
+                text-transform:capitalize;
                 &:hover{                    
                     background: transparentize($color-white,.95);
                     @include box-shadow($top:0, $left:0px, $blur:4px, $color:rgba(0, 0, 0, 0.05), $inset: true);

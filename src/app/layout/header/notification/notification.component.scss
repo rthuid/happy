@@ -43,10 +43,12 @@
     .dropdown-menu{
         top: 100% !important;
         width:300px;
+        padding: 0;
+        background: $color-bg-light;
         &:after{
             content: '';
             position: absolute;
-            border-bottom: 10px solid $color-white;
+            border-bottom: 10px solid $color-bg-light;
             border-left: 10px transparent solid;
             border-right: 10px transparent solid;
             bottom: 100%;
@@ -61,6 +63,39 @@
             border-right: 10px transparent solid;
             bottom: 100%;
             right: $padding ;
+        }
+        .head{
+            padding: $padding/4 $padding;
+            border-bottom: 1px solid $color-border;
+            color: $color-2;
+            font-weight: bold;
+        }
+        ul.body{
+            list-style: none;
+            padding: $padding/2 0;
+            margin: 0;
+            background: $color-white;
+            max-height: 300px;
+            overflow: auto;
+            >li{
+                padding: $padding/2 $padding;
+                &:hover{
+                    background: $color-bg-light;
+                    cursor: pointer;
+                }
+                .name{
+                    font-weight: bold;
+                }
+            }            
+        }
+        .footer{
+            padding: $padding/4 $padding;
+            border-top: 1px solid $color-border;
+            color: $color-1;
+            a{
+                display: block;
+                text-align: center;
+            }
         }
     }
 }

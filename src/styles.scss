@@ -8,6 +8,9 @@ body.body{
     a{
         color: $color-1;
     }
+    .dropdown-menu{
+        font-size: $font-size-small;
+    }
 }
 .app-container{
     width: 1020px;
