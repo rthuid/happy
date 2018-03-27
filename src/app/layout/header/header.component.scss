@@ -128,6 +128,97 @@
                 border-right: 1px solid $color-border-light;
                 margin: auto;
             }
+            .dropdown{
+                @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
+                position: initial;
+                .drop-down{
+                    cursor: pointer;
+                    position: initial;
+                    font-weight: bold;
+                    @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
+                    padding: $padding/2;
+                    border-radius: $border-radius;
+                    min-height: 50px;
+                    i{
+                        font-size: $font-size-default + 5;
+                        position: relative;
+                        .has{
+                            font-family: $font-default;
+                            font-weight: bold;
+                            padding: $padding/4;
+                            border-radius:$border-radius;
+                            color: $color-white;
+                            background: $color-red;
+                            position: absolute;
+                            bottom: 60%;
+                            left: 60%;
+                            font-size: 65%;
+                        }
+                    }
+                    &:hover{
+                        background: transparentize($color-white,.95);
+                        @include box-shadow($top:0, $left:0px, $blur:4px, $color:rgba(0, 0, 0, 0.05), $inset: true);
+                    }
+                    .pic{
+                        width: 40px;
+                        height: 40px;
+                        background-position: center !important;
+                        background-size: cover !important;
+                        border-radius: 50px;
+                        border: 1px solid $color-border-light;
+                        display: inline-block;
+                        margin-right: $padding;
+                    }
+                    &:after{
+                        margin-left: $padding/2;
+                        margin-top: $padding/2;
+                    }
+                }
+                &.show {
+                    .drop-down{
+                        background: transparentize($color-white,.95);
+                        @include box-shadow($top:0, $left:0px, $blur:4px, $color:rgba(0, 0, 0, 0.05), $inset: true);
+                    }
+                }
+                .dropdown-menu{
+                    top: 100% !important;
+                    width:400px;
+                    padding: 0;
+                    background: $color-bg-light;
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        border-bottom: 10px solid $color-bg-light;
+                        border-left: 10px transparent solid;
+                        border-right: 10px transparent solid;
+                        bottom: 100%;
+                        right: $padding ;
+                        margin-bottom: -1px;
+                    }
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        border-bottom: 10px solid $color-border;
+                        border-left: 10px transparent solid;
+                        border-right: 10px transparent solid;
+                        bottom: 100%;
+                        right: $padding ;
+                    }
+                    
+                    .footer{
+                        padding: $padding/4 $padding;
+                        border-top: 1px solid $color-border;
+                        color: $color-1;
+                        a{
+                            display: block;
+                            text-align: center;
+                            &:hover{
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
         }
         .menus-wrap{
             color: $color-1;

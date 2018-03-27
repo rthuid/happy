@@ -12,7 +12,18 @@
               <a routerLink="/">Home</a>
           </div>
           <div class="notif-wrap">
-              <app-notification></app-notification>              
+              <div ngbDropdown placement="bottom-right" class="d-inline-block">
+                  <div class="drop-down" id="notifications" ngbDropdownToggle>
+                    <i class="fa fa-bell" aria-hidden="true"><span class="has">3</span></i>
+                  </div>
+                  <div ngbDropdownMenu aria-labelledby="notifications">                    
+                    <app-notification></app-notification>  
+                    <div class="footer">
+                      <a routerLink="/notification">View all</a>
+                    </div>
+                  </div>
+                </div>
+                          
           </div>
           <div class="drop-wrap">
               <div ngbDropdown placement="bottom-right" class="d-inline-block">

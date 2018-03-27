@@ -1,40 +1,43 @@
 @import '~sass/variables';
 @import '~sass/mixins';
-
-.dropdown{
-    @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
-    position: initial;
-    .drop-down{
-        cursor: pointer;
-        position: initial;
-        font-weight: bold;
-        @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
-        padding: $padding/2;
+::ng-deep.content-area{
+    .noti-wrap{
+        border: 1px solid $color-border;
+        background: $color-white;
         border-radius: $border-radius;
-        min-height: 50px;
-        i{
-            font-size: $font-size-default + 5;
-            position: relative;
-            .has{
-                font-family: $font-default;
-                font-weight: bold;
-                padding: $padding/4;
-                border-radius:$border-radius;
-                color: $color-white;
-                background: $color-red;
-                position: absolute;
-                bottom: 60%;
-                left: 60%;
-                font-size: 65%;
-            }
+        padding-bottom: $padding;
+        ul.body{
+            max-height: initial;
+        }
+    }
+}
+.head{
+    padding: $padding/4 $padding;
+    border-bottom: 1px solid $color-border;
+    color: $color-2;
+    font-weight: bold;
+}
+ul.body{
+    list-style: none;
+    padding: $padding/2 0;
+    margin: 0;
+    background: $color-white;
+    max-height: 300px;
+    overflow: auto;
+    >li{
+        padding: $padding/2 $padding;
+        @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
+        border-bottom: 1px solid $color-border-light;
+        &:first-child{
+            border-top: 1px solid $color-border-light;
         }
         &:hover{
-            background: transparentize($color-white,.95);
-            @include box-shadow($top:0, $left:0px, $blur:4px, $color:rgba(0, 0, 0, 0.05), $inset: true);
+            background: $color-bg-light;
+            cursor: pointer;
         }
         .pic{
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             background-position: center !important;
             background-size: cover !important;
             border-radius: 50px;
@@ -42,99 +45,19 @@
             display: inline-block;
             margin-right: $padding;
         }
-        &:after{
-            margin-left: $padding/2;
-            margin-top: $padding/2;
-        }
-    }
-    &.show {
-        .drop-down{
-            background: transparentize($color-white,.95);
-            @include box-shadow($top:0, $left:0px, $blur:4px, $color:rgba(0, 0, 0, 0.05), $inset: true);
-        }
-    }
-    .dropdown-menu{
-        top: 100% !important;
-        width:400px;
-        padding: 0;
-        background: $color-bg-light;
-        &:after{
-            content: '';
-            position: absolute;
-            border-bottom: 10px solid $color-bg-light;
-            border-left: 10px transparent solid;
-            border-right: 10px transparent solid;
-            bottom: 100%;
-            right: $padding ;
-            margin-bottom: -1px;
-        }
-        &:before{
-            content: '';
-            position: absolute;
-            border-bottom: 10px solid $color-border;
-            border-left: 10px transparent solid;
-            border-right: 10px transparent solid;
-            bottom: 100%;
-            right: $padding ;
-        }
-        .head{
-            padding: $padding/4 $padding;
-            border-bottom: 1px solid $color-border;
-            color: $color-2;
-            font-weight: bold;
-        }
-        ul.body{
-            list-style: none;
-            padding: $padding/2 0;
-            margin: 0;
-            background: $color-white;
-            max-height: 300px;
-            overflow: auto;
-            >li{
-                padding: $padding/2 $padding;
-                @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
-                border-bottom: 1px solid $color-border-light;
-                &:first-child{
-                    border-top: 1px solid $color-border-light;
-                }
-                &:hover{
-                    background: $color-bg-light;
-                    cursor: pointer;
-                }
-                .pic{
-                    width: 50px;
-                    height: 50px;
-                    background-position: center !important;
-                    background-size: cover !important;
-                    border-radius: 50px;
-                    border: 1px solid $color-border-light;
-                    display: inline-block;
-                    margin-right: $padding;
-                }
-                .right{
-                    @include flex-self($value:1 1 auto);
-                    .name{
-                        font-weight: bold;
-                    }
-                    .body2{
-                        font-size: 90%;
-                        color: $color-2;
-                        i{
-                            color: $color-1;
-                            padding-right: $padding/4;
-                        }
-                    }
-                }                
-            }            
-        }
-        .footer{
-            padding: $padding/4 $padding;
-            border-top: 1px solid $color-border;
-            color: $color-1;
-            a{
-                display: block;
-                text-align: center;
+        .right{
+            @include flex-self($value:1 1 auto);
+            .name{
+                font-weight: bold;
             }
-        }
-    }
+            .body2{
+                font-size: 90%;
+                color: $color-2;
+                i{
+                    color: $color-1;
+                    padding-right: $padding/4;
+                }
+            }
+        }                
+    }            
 }

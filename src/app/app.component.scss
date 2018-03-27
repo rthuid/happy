@@ -5,13 +5,13 @@
         @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:stretch);
         .content-area{
             width: 70%;
-            padding-left: $padding*4/3;
-            padding-right: $padding*4/3;
+            padding-left: $padding*2/3;
+            padding-right: $padding*2/3;
         }
         .main-footer{
             width: 30%;
-            padding-left: $padding*4/3;
-            padding-right: $padding*4/3;
+            padding-left: $padding*2/3;
+            padding-right: $padding*2/3;
         }
     }
 }

@@ -13,6 +13,7 @@ import { MainSearchComponent } from './layout/header/main-search/main-search.com
 import { CarouselComponent } from './components/carousel/carousel.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './layout/footer/footer.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     PostListingComponent,
     NotificationComponent,
     MainSearchComponent,
-    CarouselComponent
+    CarouselComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

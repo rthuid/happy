@@ -24,7 +24,7 @@ body.body{
     }
     .heading{
         color: $color-2;
-        font-size: $font-size-medium;
+        font-size: $font-size-default;
         font-weight: bold;
     }
     //carousel
@@ -33,7 +33,7 @@ body.body{
         border: 1px solid $color-border;
         border-radius: $border-radius;
         background: $color-white;
-        margin-bottom: $padding * 4/3;
+        margin-bottom: $padding*4/3;
         img{
             max-width: 100%;
         }
@@ -93,6 +93,43 @@ body.body{
                     font-size: $font-size-medium;
                 }
             }
+        }
+        a{
+            &:hover{
+                text-decoration: none;
+            }
+        }
+        .carousel-caption{
+            position: relative;
+            left: 0;
+            color: $color-black;
+            padding: 0;
+            right: 0;
+            bottom: initial;
+            text-align: left;   
+            &:hover{
+                text-decoration: underline;
+            }         
+            h3{
+                font-size: $font-size-default;
+                color: $color-1;
+                font-weight: bold;
+                margin: 0;
+                padding-top: $padding/2;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            p{
+                font-size: $font-size-small;
+                margin: 0;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+        .carousel-indicators{
+            display: none;
         }
     }
 }

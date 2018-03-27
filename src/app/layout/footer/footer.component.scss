@@ -1,0 +1,10 @@
+@import '~sass/variables';
+@import '~sass/mixins';
+.main-footer{
+    color: $color-2;
+    font-size: $font-size-small;
+    margin-top: -$padding;
+    a{
+        color: $color-2;
+    }
+}
