@@ -13,15 +13,88 @@ body.body{
         font-size: $font-size-small;
     }
     .row {
-        margin-right: -$padding*3/4;
-        margin-left: -$padding*3/4;
-      
-        & > [class^="col-"],
-        & > [class*=" col-"] {
-          padding-right: $padding*3/4;
-          padding-left: $padding*3/4;
+    margin-right: -$padding*3/4;
+    margin-left: -$padding*3/4;
+    
+    & > [class^="col-"],
+    & > [class*=" col-"] {
+        padding-right: $padding*3/4;
+        padding-left: $padding*3/4;
+    }
+    }
+    .heading{
+        color: $color-2;
+        font-size: $font-size-medium;
+        font-weight: bold;
+    }
+    //carousel
+    .carousel-wrap{
+        padding: $padding;
+        border: 1px solid $color-border;
+        border-radius: $border-radius;
+        background: $color-white;
+        margin-bottom: $padding * 4/3;
+        img{
+            max-width: 100%;
         }
-      }
+        *{
+            outline: 0;
+        }
+        .carousel-control-prev{
+            left: -$padding;
+            .carousel-control-prev-icon{
+                background: transparentize($color-white, .4);
+                border: 1px solid $color-border;
+                border-left: 0;
+                cursor: pointer;
+                height: 40px;
+                width: 40px;
+                line-height: 40px;
+                text-align: center;
+                left: 0;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                &::before{
+                    content: "\f053";
+                    height: 40px;
+                    width: 40px;
+                    line-height: 40px;
+                    text-align: center;
+                    font-size: $font-size-medium;
+                }
+            }
+        }
+        .carousel-control-next{
+            right: -$padding;
+            .carousel-control-next-icon{
+                background: transparentize($color-white, .4);
+                border: 1px solid $color-border;
+                border-right: 0;
+                cursor: pointer;
+                height: 40px;
+                width: 40px;
+                line-height: 40px;
+                text-align: center;
+                right: 0;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: inherit;
+                text-rendering: auto;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                &::before{
+                    content: "\f054";
+                    height: 40px;
+                    width: 40px;
+                    line-height: 40px;
+                    text-align: center;
+                    font-size: $font-size-medium;
+                }
+            }
+        }
+    }
 }
 .app-container{
     width: 1020px;

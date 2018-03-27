@@ -2,7 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 
-@Component({selector: 'app-carousel', templateUrl: './carousel.component.html'})
+@Component({
+  selector: 'app-carousel',
+  templateUrl: './carousel.component.html',
+  styleUrls: ['./carousel.component.scss']
+})
 export class CarouselComponent implements OnInit {
   images: Array<string>;
 
