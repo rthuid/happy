@@ -1,0 +1,31 @@
+@import '~sass/variables';
+@import '~sass/mixins';
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li{
+        a,.menu-item{
+            padding: $padding/4 $padding;
+            display: block;
+            background: transparentize($color-white, .6);
+            border: 1px solid $color-border;
+            color: $color-black;
+            border-radius: $border-radius;
+            border-top: 0;            
+            i{
+                padding-right: $padding;
+            }
+            &:hover{
+                text-decoration: none;
+                background: transparentize($color-white, 0);
+            }
+        }
+        &:first-child{
+            a{
+                border-top: 1px solid $color-border;
+            }            
+        }
+    }
+}

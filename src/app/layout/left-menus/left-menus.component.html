@@ -1,0 +1,91 @@
+<div class="left-panel">
+  <ul>
+    <li>
+      <a routerLink="/">
+          <i class="fa fa-check" aria-hidden="true"></i>Subscribed
+      </a>        
+    </li>
+    <li>
+      <a routerLink="/">
+          <i class="fa fa-star-o" aria-hidden="true"></i>Category 1
+      </a>        
+    </li>
+    <li>
+      <a routerLink="/">
+          <i class="fa fa-star-o" aria-hidden="true"></i>Category 2
+      </a>        
+    </li>
+    <li>
+      <a routerLink="/">
+          <i class="fa fa-star-o" aria-hidden="true"></i>Category 3
+      </a>        
+    </li>
+    <li>
+      <a routerLink="/">
+          <i class="fa fa-star-o" aria-hidden="true"></i>Category 4
+      </a>        
+    </li>
+    <li>
+        <div class="menu-item" (click)="isCollapsed = !isCollapsed"
+          [attr.aria-expanded]="!isCollapsed" aria-controls="category1">
+          <i class="fa fa-star" aria-hidden="false"></i>Category Group 1
+        </div>
+        <div id="category1" [ngbCollapse]="!isCollapsed">
+            <ul>
+                <li>
+                      <a routerLink="/">
+                          <i class="fa fa-star-o" aria-hidden="true"></i>Category 4
+                      </a>   
+                  </li>
+                  <li>
+                      <a routerLink="/">
+                          <i class="fa fa-star-o" aria-hidden="true"></i>Category 4
+                      </a>   
+                  </li>
+                  <li>
+                      <a routerLink="/">
+                          <i class="fa fa-star-o" aria-hidden="true"></i>Category 4
+                      </a>   
+                  </li>
+                  <li>
+                      <a routerLink="/">
+                          <i class="fa fa-star-o" aria-hidden="true"></i>Category 4
+                      </a>   
+                  </li>
+              </ul> 
+          </div>
+                  
+    </li>
+    <li>
+        <div class="menu-item" (click)="isCollapsed2 = !isCollapsed2"
+          [attr.aria-expanded]="!isCollapsed2" aria-controls="category2">
+          <i class="fa fa-star" aria-hidden="false"></i>Category Group 2
+        </div>
+        <div id="category2" [ngbCollapse]="!isCollapsed2">
+            <ul>
+                <li>
+                      <a routerLink="/">
+                          <i class="fa fa-star-o" aria-hidden="true"></i>Category 4
+                      </a>   
+                  </li>
+                  <li>
+                      <a routerLink="/">
+                          <i class="fa fa-star-o" aria-hidden="true"></i>Category 4
+                      </a>   
+                  </li>
+                  <li>
+                      <a routerLink="/">
+                          <i class="fa fa-star-o" aria-hidden="true"></i>Category 4
+                      </a>   
+                  </li>
+                  <li>
+                      <a routerLink="/">
+                          <i class="fa fa-star-o" aria-hidden="true"></i>Category 4
+                      </a>   
+                  </li>
+              </ul> 
+          </div>
+                  
+    </li>
+  </ul>
+</div>

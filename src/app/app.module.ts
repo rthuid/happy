@@ -14,6 +14,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './layout/footer/footer.component';
+import { LeftMenusComponent } from './layout/left-menus/left-menus.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { FooterComponent } from './layout/footer/footer.component';
     NotificationComponent,
     MainSearchComponent,
     CarouselComponent,
-    FooterComponent
+    FooterComponent,
+    LeftMenusComponent
   ],
   imports: [
     BrowserModule,
