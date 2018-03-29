@@ -1,4 +1,11 @@
 @import '~sass/variables';
 .left-panel{
     width: 30%;
+    padding-left: $padding*2/3;
+    padding-right: $padding*2/3;
+}
+.right-panel{
+    width: 70%;
+    padding-left: $padding*2/3;
+    padding-right: $padding*2/3;
 }

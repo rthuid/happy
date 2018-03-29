@@ -1,0 +1,42 @@
+@import '~sass/variables';
+@import '~sass/mixins';
+.create-post{
+    border: 1px solid $color-border;
+    background: $color-white;
+    border-radius: $border-radius;
+    .head{
+        border-bottom: 1px solid $color-border;
+        background: $color-bg-light;
+        padding: $padding/2 $padding;
+        border-radius: $border-radius $border-radius 0 0;
+        font-weight: bold;
+        color: $color-2;
+    }
+    .body{
+        padding: $padding;
+        @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:stretch);
+        .pic{
+            width: 40px;
+            height: 40px;
+            background-position: center !important;
+            background-size: cover !important;
+            border-radius: 50px;
+            border: 1px solid $color-border-light;
+            display: inline-block;
+            margin-right: $padding;
+        }
+        .right{
+            @include flex-self($value:1 1 auto);
+            textarea{
+                display: block;
+                width: 100%;
+                border-color: $color-border-light;
+            }
+        }
+        &.last{
+            padding: $padding/3 0;
+            margin: 0 $padding;
+            border-top: 1px solid $color-border;
+        }
+    }
+}
