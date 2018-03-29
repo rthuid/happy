@@ -1,6 +1,8 @@
 @import '~sass/variables';
 @import '~sass/mixins';
-
+.heading{
+    margin-top: $padding/2;
+}
 ul{
     list-style: none;
     padding: 0;
@@ -8,6 +10,7 @@ ul{
     li{
         a,.menu-item{
             padding: $padding/4 $padding;
+            padding-bottom: $padding/3;
             display: block;
             background: transparentize($color-white, .6);
             border: 1px solid $color-border;
