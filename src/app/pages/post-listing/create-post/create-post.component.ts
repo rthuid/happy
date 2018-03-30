@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-post.component.scss']
 })
 export class CreatePostComponent implements OnInit {
-
-  constructor() { }
+ addclass = 'isSubmitting';
+  constructor() {
+    // const addclass = '!isSubmitting';
+   }
 
   ngOnInit() {
+    // const addclass = 'isSubmitting';
   }
-
+  clickCreatePost() {
+    // const addclass = 'isSubmitting';
+  }
 }

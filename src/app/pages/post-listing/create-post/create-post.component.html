@@ -1,14 +1,14 @@
-<div class="create-post">
+<div class="create-post" [ngClass]="{ 'active': addclass == true}">
   <div class="head">
     Create Post
   </div>
   <div class="body">
     <div class="pic" style="background-image: url(../../assets/images/pro-pic-01.jpg)"></div>
     <div class="right">
-      <textarea placeholder="Write something here"></textarea>
+      <textarea placeholder="Write something here" (click)="addclass = true"></textarea>
     </div>
   </div>
-  <div class="body last">
+  <div class="body last" (click)="addclass = true">
     <div class="left-icon">
       <i class="fa fa-picture-o"></i> Picture - 
       <i class="fa fa-video-camera"></i> Video - 
@@ -17,5 +17,26 @@
     <div class="right-icon">
       <i class="fa fa-ellipsis-h"></i>
     </div>
+  </div>
+  <div class="body footer">
+    <div class="file-wrap">
+      <div class="input-group input-group-sm">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+              <i class="fa fa-picture-o"></i>
+              <i class="fa fa-video-camera"></i>
+              <i class="fa fa-file-pdf-o"></i>
+          </span>
+        </div>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="inputGroupFile01">
+          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+        </div>
+      </div>
+    </div>      
+      <div class="btn-wrap">
+        <button class="btn btn-sm btn-danger" (click)="addclass = false">Cancel</button>
+        <button class="btn btn-sm btn-primary">Post</button>
+      </div>
   </div>
 </div>
