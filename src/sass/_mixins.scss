@@ -239,3 +239,13 @@
     line-height: $line-height;
     border-radius: $border-radius;
 }
+@mixin pro-pic($size:40px){
+    width: $size;
+    height: $size;
+    background-position: center !important;
+    background-size: cover !important;
+    border-radius: $size;
+    border: 1px solid $color-border-light;
+    display: inline-block;
+    margin-right: $padding;
+}

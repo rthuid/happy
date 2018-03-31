@@ -1,0 +1,29 @@
+@import '~sass/variables';
+@import '~sass/mixins';
+.post-wrap{
+    border: 1px solid $color-border;
+    border-radius: $border-radius;
+    background: $color-white;
+    margin-top: $padding*4/3;
+    .head{
+        padding: $padding;
+        @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
+        .pic{
+            @include pro-pic();
+        }
+        .right{
+            @include flex-self($value:1 1 auto);
+            .name{
+                font-weight: bold;
+            }
+            .body2{
+                font-size: 90%;
+                color: $color-2;
+                i{
+                    color: $color-1;
+                    padding-right: $padding/4;
+                }
+            }
+        }  
+    }
+}
