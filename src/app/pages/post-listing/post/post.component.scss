@@ -20,10 +20,46 @@
                 font-size: 90%;
                 color: $color-2;
                 i{
-                    color: $color-1;
                     padding-right: $padding/4;
                 }
             }
         }  
+    }
+    >.body{
+        padding: 0 $padding;
+        .item-wrap{
+            max-height: 500px;
+            overflow: hidden;
+            img,video{
+                width: 100%;
+                height: auto;
+            }  
+        }        
+    }
+    >.footer{
+        padding: 0 $padding;
+        .count-wrap{
+            @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
+            >div{
+                @include flex-self($value:0 1 auto);
+                padding: $padding/2 0;
+                cursor: pointer;
+                color: $color-2;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+        .like-wrap{
+            @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
+            border-top: 1px solid $color-border;
+            >div{
+                @include flex-self($value:0 1 33.33333%);
+                text-align: center;
+                cursor: pointer;
+                padding: $padding/2 0;
+                font-size: 105%;
+            }
+        }
     }
 }
