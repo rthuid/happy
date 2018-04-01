@@ -18,6 +18,7 @@ import { LeftMenusComponent } from './layout/left-menus/left-menus.component';
 import { CreatePostComponent } from './pages/post-listing/create-post/create-post.component';
 import { PostComponent } from './pages/post-listing/post/post.component';
 import { ProfileViewComponent } from './pages/profile-view/profile-view.component';
+import { ModalLikeComponent } from './components/modal-like/modal-like.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { ProfileViewComponent } from './pages/profile-view/profile-view.componen
     LeftMenusComponent,
     CreatePostComponent,
     PostComponent,
-    ProfileViewComponent
+    ProfileViewComponent,
+    ModalLikeComponent
   ],
   imports: [
     BrowserModule,

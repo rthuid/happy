@@ -22,7 +22,7 @@
   </div>
   <div class="footer">
     <div class="count-wrap">
-      <div class="like">12 Likes</div>
+      <div class="like" (click)="openSm(content)">12 Likes</div>
       <div class="comment">44 Comments</div>
     </div>
     <div class="like-wrap">
@@ -124,3 +124,58 @@
     </div>
   </div>
 </div>
+<!-- modal for like -->
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Post Likes</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body like">
+    <ul class="body">
+        <li>
+            <div class="pic" style="background-image: url(../../assets/images/pro-pic-01.jpg)"></div>
+            <div class="right">
+              <div class="body">
+                <span class="name">Emil Paul</span>
+                <span class="function">likes your photo.</span>
+              </div>
+              <div class="body2">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                <span>Yesterday at 4:41pm</span>
+              </div>
+            </div>
+        </li>
+      <li>
+          <div class="pic" style="background-image: url(../../assets/images/pro-pic-01.jpg)"></div>
+          <div class="right">
+            <div class="body">
+              <span class="name">Emil Paul</span>
+              <span class="function">replied to your comment.</span>
+            </div>
+            <div class="body2">
+                <i class="fa fa-comment" aria-hidden="true"></i>
+                <span>Yesterday at 4:41pm</span>
+            </div>
+          </div>
+      </li>
+      <li>
+          <div class="pic" style="background-image: url(../../assets/images/pro-pic-01.jpg)"></div>
+          <div class="right">
+            <div class="body">
+              <span class="name">Emil Paul</span>
+              <span class="function">likes your photo.</span>
+            </div>
+            <div class="body2">
+              <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+              <span>Yesterday at 4:41pm</span>
+            </div>
+          </div>
+      </li>
+    </ul>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light btn-sm" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>
