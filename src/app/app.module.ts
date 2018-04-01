@@ -17,6 +17,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { LeftMenusComponent } from './layout/left-menus/left-menus.component';
 import { CreatePostComponent } from './pages/post-listing/create-post/create-post.component';
 import { PostComponent } from './pages/post-listing/post/post.component';
+import { ProfileViewComponent } from './pages/profile-view/profile-view.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { PostComponent } from './pages/post-listing/post/post.component';
     FooterComponent,
     LeftMenusComponent,
     CreatePostComponent,
-    PostComponent
+    PostComponent,
+    ProfileViewComponent
   ],
   imports: [
     BrowserModule,

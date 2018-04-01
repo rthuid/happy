@@ -15,6 +15,7 @@
         }
         .body.footer{
             @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:stretch);
+            @include flex-flex-wrap($value:wrap);
         }
         .body.last{
             display: none;
@@ -70,11 +71,20 @@
                 }
             }
             .file-wrap{
-                @include flex-self($value:1 1 50%);
+                @include flex-self($value:0 1 50%);
                 padding-right: $padding*4/3;
             }
+            .select-wrap{
+                @include flex-self($value:1 1 auto);
+                .form-control{
+                    padding: 3px 10px;
+                    height: auto;
+                }
+            }
             .btn-wrap{
-                @include flex-self($value:0 1 auto);
+                @include flex-self($value:1 1 100%);
+                text-align: right;
+                padding-top: $padding;
             }
         }
     }

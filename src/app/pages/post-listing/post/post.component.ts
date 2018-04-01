@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostComponent implements OnInit {
 
-  constructor() { }
-
+  constructor() {
+   }
   ngOnInit() {
   }
-
+  funClick() {
+  }
 }
