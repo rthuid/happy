@@ -22,15 +22,15 @@
   </div>
   <div class="footer">
     <div class="count-wrap">
-      <div class="like" (click)="openSm(content)">12 Likes</div>
-      <div class="comment">44 Comments</div>
+      <div class="like" (click)="openSm(like)">{{likeCount}} Likes</div>
+      <div class="comment" (click)="openLg(comment)">44 Comments</div>
     </div>
     <div class="like-wrap">
-      <div class="like" [ngClass]="{'liked': toggleLike}" (click)="toggleLike = !toggleLike">
+      <div class="like" [ngClass]="{'liked': toggleLike}" (click)="likeFun()">
         <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
         <!-- Like -->
       </div>
-      <div class="comment" [ngClass]="{'active': toggleCommented}" (click)="toggleCommented = !toggleCommented">
+      <div class="comment" [ngClass]="{'active': toggleCommented}" (click)="toggleComment()">
         <i class="fa fa-comment-o" aria-hidden="true"></i>
         Comment
       </div>
@@ -41,82 +41,14 @@
     </div>
   </div>
   <div class="comment-wrap">
-    <div class="commented">
-        <div class="item-wrap">
-            <div class="item">
-                <div class="pic" style="background-image: url(../../assets/images/pro-pic-03.jpg)"></div>
-                <div class="right">
-                  <a class="name" routerLink="/profileview">Emil Paul</a>
-                  <span class="text">Awesome post</span>
-                  <div class="body2">
-                    <span class="replay" (click)="toggleRplay = !toggleRplay">Reply</span>
-                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                    <span>March 13 at 9:22am</span>
-                  </div>        
-                </div>
-              </div>
-              <div class="item replay">
-                <div class="pic" style="background-image: url(../../assets/images/pro-pic-03.jpg)"></div>
-                  <div class="right">
-                    <a class="name" routerLink="/profileview">Emil Paul</a>
-                    <span class="text">Awesome post</span>
-                    <div class="body2">
-                      <span class="replay" (click)="toggleRplay = !toggleRplay">Reply</span>
-                      <i class="fa fa-clock-o" aria-hidden="true"></i>
-                      <span>March 13 at 9:22am</span>
-                    </div>        
-                  </div>
-              </div>
-              <div class="item replay comment" [ngClass]="{'active': toggleRplay}">
-                  <div class="pic" style="background-image: url(../../assets/images/pro-pic-02.jpg)"></div>
-                  <div class="mid">
-                      <textarea rows="1" class="form-control" placeholder="Write a comment.."></textarea>
-                    </div>
-                    <div class="last">
-                      <button class="btn btn-primary btn-sm">Post</button>
-                    </div>
-              </div>
-        </div>
-      <div class="item-wrap">
-          <div class="item">
-              <div class="pic" style="background-image: url(../../assets/images/pro-pic-03.jpg)"></div>
-              <div class="right">
-                <a class="name" routerLink="/profileview">Emil Paul</a>
-                <span class="text">Awesome post</span>
-                <div class="body2">
-                  <span class="replay" (click)="toggleRplay1 = !toggleRplay1">Reply</span>
-                  <i class="fa fa-clock-o" aria-hidden="true"></i>
-                  <span>March 13 at 9:22am</span>
-                </div>        
-              </div>
-            </div>
-            <div class="item replay">
-              <div class="pic" style="background-image: url(../../assets/images/pro-pic-03.jpg)"></div>
-                <div class="right">
-                  <a class="name" routerLink="/profileview">Emil Paul</a>
-                  <span class="text">Awesome post</span>
-                  <div class="body2">
-                    <span class="replay" (click)="toggleRplay1 = !toggleRplay1">Reply</span>
-                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                    <span>March 13 at 9:22am</span>
-                  </div>        
-                </div>
-            </div>
-            <div class="item replay comment" [ngClass]="{'active': toggleRplay1}">
-                <div class="pic" style="background-image: url(../../assets/images/pro-pic-02.jpg)"></div>
-                <div class="mid">
-                    <textarea rows="1" class="form-control" placeholder="Write a comment.."></textarea>
-                  </div>
-                  <div class="last">
-                    <button class="btn btn-primary btn-sm">Post</button>
-                  </div>
-            </div>
-      </div>
+    <div class="commented-list">
+        <app-comment-item></app-comment-item>
+        <app-comment-item></app-comment-item>
     </div>
-    <div class="comment" [ngClass]="{'active': toggleCommented}">
+    <div class="new-comment" [ngClass]="{'active': toggleCommented}">
       <div class="pic" style="background-image: url(../../assets/images/pro-pic-01.jpg)"></div>
       <div class="mid">
-        <textarea rows="1" class="form-control" placeholder="Write a comment.."></textarea>
+        <textarea rows="1" class="form-control mainComment" placeholder="Write a comment.."></textarea>
       </div>
       <div class="last">
         <button class="btn btn-primary btn-sm">Post</button>
@@ -125,57 +57,20 @@
   </div>
 </div>
 <!-- modal for like -->
-<ng-template #content let-c="close" let-d="dismiss">
+<ng-template #like let-c="close" let-d="dismiss">
   <div class="modal-header">
     <h4 class="modal-title">Post Likes</h4>
     <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <div class="modal-body like">
-    <ul class="body">
-        <li>
-            <div class="pic" style="background-image: url(../../assets/images/pro-pic-01.jpg)"></div>
-            <div class="right">
-              <div class="body">
-                <span class="name">Emil Paul</span>
-                <span class="function">likes your photo.</span>
-              </div>
-              <div class="body2">
-                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-                <span>Yesterday at 4:41pm</span>
-              </div>
-            </div>
-        </li>
-      <li>
-          <div class="pic" style="background-image: url(../../assets/images/pro-pic-01.jpg)"></div>
-          <div class="right">
-            <div class="body">
-              <span class="name">Emil Paul</span>
-              <span class="function">replied to your comment.</span>
-            </div>
-            <div class="body2">
-                <i class="fa fa-comment" aria-hidden="true"></i>
-                <span>Yesterday at 4:41pm</span>
-            </div>
-          </div>
-      </li>
-      <li>
-          <div class="pic" style="background-image: url(../../assets/images/pro-pic-01.jpg)"></div>
-          <div class="right">
-            <div class="body">
-              <span class="name">Emil Paul</span>
-              <span class="function">likes your photo.</span>
-            </div>
-            <div class="body2">
-              <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-              <span>Yesterday at 4:41pm</span>
-            </div>
-          </div>
-      </li>
-    </ul>
+  <div class="modal-body">
+    <app-liked-list></app-liked-list>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-light btn-sm" (click)="c('Close click')">Close</button>
   </div>
+</ng-template>
+<ng-template #comment let-c="close" let-d="dismiss">
+  rth
 </ng-template>

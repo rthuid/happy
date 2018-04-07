@@ -111,73 +111,8 @@
         background: $color-bg-light;
         border-radius: 0 0 $border-radius $border-radius;
         border-top: 1px solid $color-border;
-        .commented{
-            .item-wrap{
-                padding: $padding/2 0;
-                &:not(:last-child){
-                    border-bottom: 1px solid $color-border;
-                }                
-                .item{
-                    padding: $padding/3 $padding;
-                    @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:stretch);
-                    &.replay{                    
-                        padding-left: $padding*5;
-                        .pic{
-                            @include pro-pic(25px);
-                        }
-                    }
-                    &.comment{
-                        .pic{
-                            @include pro-pic(25px);
-                        }
-                        display: none;
-                        &.active{
-                            @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:stretch);
-                            border-top: 0;
-                            padding: $padding;
-                            padding-left: $padding*5;
-                            .pic{
-                                @include pro-pic(30px);
-                            }
-                            .mid{
-                                @include flex-self($value:1 1 auto);
-                                padding-right: $padding;
-                                textarea{
-                                    font-size: inherit;
-                                    line-height: 1.2;
-                                }
-                            }
-                        }
-                    }
-                    .pic{
-                        @include pro-pic(30px);
-                    }
-                    .right{
-                        @include flex-self($value:1 1 auto);
-                        .name{
-                            font-weight: bold;
-                            color: $color-1;
-                        }
-                        .body2{
-                            font-size: 85%;
-                            color: $color-2;
-                            i{
-                                padding-right: $padding/4;
-                            }
-                            .replay{
-                                padding-right: $padding;
-                                color: $color-1;
-                                cursor: pointer;
-                                &:hover{
-                                    text-decoration: underline;
-                                }
-                            }
-                        }
-                    } 
-                }
-            }
-        }
-        .comment{
+        // .commented-list{}
+        .new-comment{
             display: none;
             &.active{
             @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:stretch);
@@ -197,45 +132,5 @@
             }
             
         }        
-    }
-}
-.modal-body.like{
-    ul.body{
-        list-style: none;
-        padding: $padding/2 0;
-        margin: 0;
-        background: $color-white;
-        max-height: 300px;
-        overflow: auto;
-        >li{
-            padding: $padding/2 $padding;
-            @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
-            border-bottom: 1px solid $color-border-light;
-            &:first-child{
-                border-top: 1px solid $color-border-light;
-            }
-            &:hover{
-                background: $color-bg-light;
-                cursor: pointer;
-            }
-            .pic{
-                @include pro-pic();
-            }
-            .right{
-                @include flex-self($value:1 1 auto);
-                .name{
-                    font-weight: bold;
-                    color: $color-1;
-                }
-                .body2{
-                    font-size: 90%;
-                    color: $color-2;
-                    i{
-                        padding-right: $padding/4;
-                        color: $color-1;
-                    }
-                }
-            }                
-        }            
     }
 }
