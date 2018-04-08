@@ -152,6 +152,17 @@ body.body{
     .modal-footer{
         padding: $padding;
     }
+    .dropdown-menu{
+        padding: $padding/2 0;
+    }
+    .dropdown-item{
+        padding: $padding/3 $padding;
+        cursor: pointer;
+    }
+    .pic{
+        background-image: url(assets/images/user-placeholder.png);
+        background-color: $color-white;        
+    }
 }
 .app-container{
     width: 1020px;

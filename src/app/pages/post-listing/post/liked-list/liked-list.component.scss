@@ -1,5 +1,14 @@
 @import '~sass/variables';
 @import '~sass/mixins';
+.likes{
+    @include flex-self($value:0 1 auto);
+    padding: $padding/2 0;
+    cursor: pointer;
+    color: $color-2;
+    &:hover{
+        text-decoration: underline;
+    }
+}
 ul.bodylike{
     list-style: none;
     padding: $padding/2 0;

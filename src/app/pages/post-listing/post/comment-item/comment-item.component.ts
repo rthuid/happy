@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-comment-item',
@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./comment-item.component.scss']
 })
 export class CommentItemComponent implements OnInit {
-
-  constructor() { }
+  toggleRplay = false;
+  constructor(private elRef: ElementRef) { }
 
   ngOnInit() {
+  }
+  // toggleCommented
+  toggleRplyComment() {
+    this.toggleRplay = !this.toggleRplay;
+    setTimeout(() => {
+      this.elRef.nativeElement.querySelector('textarea').focus();
+    }, 100);
   }
 
 }

@@ -2,12 +2,13 @@
 @import '~sass/mixins';
 .item-wrap{
     padding: $padding/2 0;
-    &:not(:last-child){
-        border-bottom: 1px solid $color-border;
-    }                
+    border-top: 1px solid $color-border;              
     .item{
         padding: $padding/3 $padding;
         @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:stretch);
+        &:hover{
+           background: $color-bg; 
+        }
         &.replay{                    
             padding-left: $padding*5;
             .pic{
@@ -40,11 +41,56 @@
         .pic{
             @include pro-pic(30px);
         }
+        &:hover{
+            .right{
+                .body{
+                    .options{
+                        .d-inline-block{
+                            opacity: 1;
+                        }                        
+                    }
+                }
+            }
+        }
         .right{
             @include flex-self($value:1 1 auto);
             .name{
                 font-weight: bold;
                 color: $color-1;
+            }
+            .body{
+                @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
+                .options{
+                    color: lighten($color-2, 5);
+                    cursor: pointer;
+                    i{
+                        padding: 0 $padding/2;
+                    }
+                    .dropdown-toggle{
+                        &:after{
+                            display: none;
+                        }
+                    }
+                    .dropdown-menu{
+                        min-width: initial;
+                    }
+                    .d-inline-block{
+                        border: 1px solid transparent;
+                        border-radius: $border-radius;
+                        opacity: 0;
+                        &:hover{
+                            border: 1px solid $color-border-light;
+                            color: $color-2;
+                            opacity: 1;
+                        }
+                        &.show{
+                            border: 1px solid $color-border-light;
+                            color: $color-2;
+                            opacity: 1;
+                        }
+                    }
+                    
+                }
             }
             .body2{
                 font-size: 85%;
@@ -55,6 +101,7 @@
                 .replay{
                     padding-right: $padding;
                     color: $color-1;
+                    user-select: none;
                     cursor: pointer;
                     &:hover{
                         text-decoration: underline;

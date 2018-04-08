@@ -21,6 +21,7 @@ import { ProfileViewComponent } from './pages/profile-view/profile-view.componen
 import { ModalLikeComponent } from './components/modal-like/modal-like.component';
 import { LikedListComponent } from './pages/post-listing/post/liked-list/liked-list.component';
 import { CommentItemComponent } from './pages/post-listing/post/comment-item/comment-item.component';
+import { DetailedPostComponent } from './pages/post-listing/post/detailed-post/detailed-post.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { CommentItemComponent } from './pages/post-listing/post/comment-item/com
     ProfileViewComponent,
     ModalLikeComponent,
     LikedListComponent,
-    CommentItemComponent
+    CommentItemComponent,
+    DetailedPostComponent
   ],
   imports: [
     BrowserModule,

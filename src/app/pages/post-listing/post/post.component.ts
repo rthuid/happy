@@ -12,6 +12,9 @@ export class PostComponent implements OnInit {
   toggleCommented = false;
   likeCount = 12;
   toggleLike = false;
+  liketext = ' Like';
+  toggleFollowed = false;
+  followtext = ' Follow';
   constructor(private modalService: NgbModal, private elRef: ElementRef) {}
   ngOnInit() {
   }
@@ -22,28 +25,31 @@ export class PostComponent implements OnInit {
       this.elRef.nativeElement.querySelector('textarea.mainComment').focus();
     }, 100);
   }
-  // toggleCommented
-  toggleRplyComment() {
-    setTimeout(() => {
-      this.elRef.nativeElement.parent('.item-wrap').find('textarea').focus();
-      console.log(this.elRef.nativeElement.parent('.item-wrap').find('textarea'));
-    }, 100);
-  }
   // like
   likeFun() {
     this.toggleLike = !this.toggleLike;
     if (this.toggleLike === true) {
       this.likeCount = this.likeCount + 1;
+      this.liketext = ' Liked';
     } else {
       this.likeCount = this.likeCount - 1;
+      this.liketext = ' Like';
+    }
+  }
+  followFun() {
+    this.toggleFollowed = !this.toggleFollowed;
+    if (this.toggleFollowed === true) {
+      this.followtext = ' Followed';
+    } else {
+      this.followtext = ' Follow';
     }
   }
 
   // modals
-  openSm(content) {
-    this.modalService.open(content, { size: 'sm' });
-  }
   openLg(content) {
     this.modalService.open(content, { size: 'lg' });
+  }
+  openSm(content) {
+    this.modalService.open(content, { size: 'sm' });
   }
 }

@@ -5,6 +5,19 @@
     border-radius: $border-radius;
     background: $color-white;
     margin-top: $padding*4/3;
+    &:hover{
+        .head{
+            .right{
+                .body{
+                    .options{
+                        .d-inline-block{
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
     .head{
         padding: $padding;
         @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
@@ -16,6 +29,40 @@
             .name{
                 font-weight: bold;
                 color: $color-1;
+            }
+            .body{
+                @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
+                .options{
+                    color: lighten($color-2, 5);
+                    cursor: pointer;
+                    i{
+                        padding: 0 $padding/2;
+                    }
+                    .dropdown-toggle{
+                        &:after{
+                            display: none;
+                        }
+                    }
+                    .dropdown-menu{
+                        min-width: initial;
+                    }
+                    .d-inline-block{
+                        border: 1px solid #fff;
+                        border-radius: $border-radius;
+                        opacity: 0;
+                        &:hover{
+                            border: 1px solid $color-border-light;
+                            color: $color-2;
+                            opacity: 1;
+                        }
+                        &.show{
+                            border: 1px solid $color-border-light;
+                            color: $color-2;
+                            opacity: 1;
+                        }
+                    }
+                    
+                }
             }
             .body2{
                 font-size: 90%;
@@ -34,7 +81,12 @@
             img,video{
                 width: 100%;
                 height: auto;
-            }  
+                cursor: pointer;
+            }
+            .item-text{
+                padding-bottom: $padding;
+                line-height: 1.2;
+            }
         }        
     }
     >.footer{
@@ -69,16 +121,10 @@
                     i{
                         width: 15px;
                     }
-                    &:after{
-                        content: 'Like';
-                    }
                     &.liked{
                         color: $color-1;
                         i:before{
                             content:'\f164';
-                        }
-                        &:after{
-                            content: 'Liked';
                         }
                     }
                 }
@@ -94,14 +140,8 @@
                     }
                 }
                 &.follow{
-                    &:after{
-                        content: 'Follow';
-                    }
                     &.followed{
                         color: $color-1;
-                        &:after{
-                            content: 'Followed';
-                        }
                     }
                 }
             }
@@ -110,7 +150,6 @@
     .comment-wrap{
         background: $color-bg-light;
         border-radius: 0 0 $border-radius $border-radius;
-        border-top: 1px solid $color-border;
         // .commented-list{}
         .new-comment{
             display: none;
