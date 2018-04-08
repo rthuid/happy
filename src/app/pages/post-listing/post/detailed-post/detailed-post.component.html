@@ -1,3 +1,86 @@
-<p>
-  detailed-post works!
-</p>
+<div class="post-wrap">
+  <div class="head">
+    <div class="pic" style="background-image: url(assets/images/pro-pic-03.jpg)"></div>
+    <div class="right">
+      <div class="body">
+          <a class="name" routerLink="/profileview">Emil Paul</a>
+          <!-- <div class="options">
+              <div ngbDropdown placement="bottom-right" class="d-inline-block">
+                  <span id="dropdownBasic1" ngbDropdownToggle>
+                      <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                  </span>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button class="dropdown-item">Edit</button>
+                    <button class="dropdown-item">Delete</button>
+                  </div>
+                </div>
+          </div> -->
+      </div>
+      <div class="body2">
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+        <span>March 13 at 9:22am</span>
+        <span class="space"> - </span>
+        <i class="fa fa-star-o" aria-hidden="true"></i>
+        <span>Category One</span>
+      </div>
+    </div>
+  </div>
+  <div class="body">
+    <div class="item-wrap">
+      <div class="item-text">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      </div>
+      <img  (click)="openLg(detailed)" src="assets/images/post-1.jpg" alt="post">
+    </div>
+  </div>
+  <div class="footer">
+    <div class="count-wrap">      
+      <div class="likes" (click)="openSm(like)">{{likeCount}} Likes</div>
+      <div class="comment">44 Comments</div>
+    </div>
+    <div class="like-wrap">
+      <div class="like" [ngClass]="{'liked': toggleLike}" (click)="likeFun()">
+        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>{{liketext}}
+        <!-- Like -->
+      </div>
+      <div class="comment" [ngClass]="{'active': toggleCommented}" (click)="toggleComment()">
+        <i class="fa fa-comment-o" aria-hidden="true"></i>
+        Comment
+      </div>
+      <div class="follow" [ngClass]="{'followed': toggleFollowed}" (click)="followFun()">
+        <i class="fa fa-check" aria-hidden="true"></i>{{followtext}}
+        <!-- Follow -->
+      </div>
+    </div>
+  </div>
+  <div class="comment-wrap">
+    <div class="commented-list">
+        <app-comment-item></app-comment-item>
+        <app-comment-item></app-comment-item>
+    </div>
+    <div class="new-comment" [ngClass]="{'active': toggleCommented}">
+      <div class="pic" style="background-image: url(assets/images/pro-pic-01.jpg)"></div>
+      <div class="mid">
+        <textarea rows="1" class="form-control mainComment" placeholder="Write a comment.."></textarea>
+      </div>
+      <div class="last">
+        <button class="btn btn-primary btn-sm">Post</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal for like -->
+<ng-template #like let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Post Likes</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">    
+    <app-liked-list></app-liked-list>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light btn-sm" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>

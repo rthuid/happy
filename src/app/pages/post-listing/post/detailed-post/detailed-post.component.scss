@@ -1,5 +1,184 @@
+@import '~sass/variables';
+@import '~sass/mixins';
 ::ng-deep{
     .modal-dialog.modal-lg{
         max-width: 90%;
+    }
+    .modal-detailed-close{
+        position: absolute;
+        right: $padding;
+        top: $padding;
+    }
+}
+.post-wrap{
+    border: 0px;
+    border-radius: $border-radius;
+    background: $color-white;
+    &:hover{
+        .head{
+            .right{
+                .body{
+                    .options{
+                        .d-inline-block{
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .head{
+        padding: $padding;
+        @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
+        .pic{
+            @include pro-pic();
+        }
+        .right{
+            @include flex-self($value:1 1 auto);
+            .name{
+                font-weight: bold;
+                color: $color-1;
+            }
+            .body{
+                @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
+                .options{
+                    color: lighten($color-2, 5);
+                    cursor: pointer;
+                    i{
+                        padding: 0 $padding/2;
+                    }
+                    .dropdown-toggle{
+                        &:after{
+                            display: none;
+                        }
+                    }
+                    .dropdown-menu{
+                        min-width: initial;
+                    }
+                    .d-inline-block{
+                        border: 1px solid #fff;
+                        border-radius: $border-radius;
+                        opacity: 0;
+                        &:hover{
+                            border: 1px solid $color-border-light;
+                            color: $color-2;
+                            opacity: 1;
+                        }
+                        &.show{
+                            border: 1px solid $color-border-light;
+                            color: $color-2;
+                            opacity: 1;
+                        }
+                    }
+                    
+                }
+            }
+            .body2{
+                font-size: 90%;
+                color: $color-2;
+                i{
+                    padding-right: $padding/4;
+                }
+            }
+        }  
+    }
+    >.body{
+        padding: 0 $padding;
+        .item-wrap{
+            max-height: 500px;
+            overflow: hidden;
+            img,video{
+                width: 100%;
+                height: auto;
+                cursor: pointer;
+            }
+            .item-text{
+                padding-bottom: $padding;
+                line-height: 1.2;
+            }
+        }        
+    }
+    >.footer{
+        padding: 0 $padding;
+        user-select: none;
+        .count-wrap{
+            @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
+            >div{
+                @include flex-self($value:0 1 auto);
+                padding: $padding/2 0;
+                cursor: pointer;
+                color: $color-2;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+        .like-wrap{
+            @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:center);
+            border-top: 1px solid $color-border;
+            padding-bottom: $padding/2;
+            >div{
+                @include flex-self($value:0 1 33.33333%);
+                text-align: center;
+                cursor: pointer;
+                padding: $padding/2 0;
+                font-size: 105%;
+                &:hover{
+                    background: $color-bg-light;
+                }
+                &.like{
+                    i{
+                        width: 15px;
+                    }
+                    &.liked{
+                        color: $color-1;
+                        i:before{
+                            content:'\f164';
+                        }
+                    }
+                }
+                &.comment{
+                    i{
+                        width: 16px;
+                    }
+                    &.active{
+                        color: $color-1;
+                        i:before{
+                            content:'\f075';
+                        }
+                    }
+                }
+                &.follow{
+                    &.followed{
+                        color: $color-1;
+                    }
+                }
+            }
+        }
+    }
+    .comment-wrap{
+        background: $color-bg-light;
+        border-radius: 0 0 $border-radius $border-radius;
+        // .commented-list{}
+        .new-comment{
+            display: none;
+            &.active{
+            @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:stretch,$align-items:stretch);
+            border-top: 1px solid $color-border;
+            padding: $padding;
+            .pic{
+                @include pro-pic(30px);
+            }
+            .mid{
+                @include flex-self($value:1 1 auto);
+                padding-right: $padding;
+                textarea{
+                    font-size: inherit;
+                    line-height: 1.2;
+                }
+            }
+            }
+            
+        }        
     }
 }

@@ -1,6 +1,6 @@
 <div class="post-wrap">
   <div class="head">
-    <div class="pic" style="background-image: url(../../assets/images/pro-pic-03.jpg)"></div>
+    <div class="pic" style="background-image: url(assets/images/pro-pic-03.jpg)"></div>
     <div class="right">
       <div class="body">
           <a class="name" routerLink="/profileview">Emil Paul</a>
@@ -30,7 +30,7 @@
       <div class="item-text">
           Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       </div>
-      <img  (click)="openLg(detailed)" src="../../assets/images/post-1.jpg" alt="post">
+      <img  (click)="openLg(detailed)" src="assets/images/post-1.jpg" alt="post">
     </div>
   </div>
   <div class="footer">
@@ -59,7 +59,7 @@
         <app-comment-item></app-comment-item>
     </div>
     <div class="new-comment" [ngClass]="{'active': toggleCommented}">
-      <div class="pic" style="background-image: url(../../assets/images/pro-pic-01.jpg)"></div>
+      <div class="pic" style="background-image: url(assets/images/pro-pic-01.jpg)"></div>
       <div class="mid">
         <textarea rows="1" class="form-control mainComment" placeholder="Write a comment.."></textarea>
       </div>
@@ -86,5 +86,8 @@
 </ng-template>
 <!-- modal post details -->
 <ng-template #detailed let-c="close" let-d="dismiss">
+    <button type="button" class="close modal-detailed-close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
   <app-detailed-post></app-detailed-post>
 </ng-template>
