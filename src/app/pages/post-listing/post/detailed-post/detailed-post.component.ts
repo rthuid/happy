@@ -14,6 +14,7 @@ export class DetailedPostComponent implements OnInit {
   liketext = ' Like';
   toggleFollowed = false;
   followtext = ' Follow';
+  commentWrapOfst = 0;
   constructor(private modalService: NgbModal, private elRef: ElementRef) {}
 
   ngOnInit() {
@@ -45,9 +46,11 @@ export class DetailedPostComponent implements OnInit {
     }
   }
 
-  // modals
-  openSm(content) {
-    this.modalService.open(content, { size: 'sm' });
+  // listing like and comment
+  likedList() {
+  }
+  commentedList() {
+    this.commentWrapOfst = this.elRef.nativeElement.querySelector('input.for-comment-focus').focus();
   }
 
 }

@@ -4,17 +4,6 @@
     <div class="right">
       <div class="body">
           <a class="name" routerLink="/profileview">Emil Paul</a>
-          <!-- <div class="options">
-              <div ngbDropdown placement="bottom-right" class="d-inline-block">
-                  <span id="dropdownBasic1" ngbDropdownToggle>
-                      <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                  </span>
-                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                    <button class="dropdown-item">Edit</button>
-                    <button class="dropdown-item">Delete</button>
-                  </div>
-                </div>
-          </div> -->
       </div>
       <div class="body2">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
@@ -30,13 +19,13 @@
       <div class="item-text">
           Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       </div>
-      <img  (click)="openLg(detailed)" src="assets/images/post-1.jpg" alt="post">
+      <img src="assets/images/post-1.jpg" alt="post">
     </div>
   </div>
   <div class="footer">
     <div class="count-wrap">      
-      <div class="likes" (click)="openSm(like)">{{likeCount}} Likes</div>
-      <div class="comment">44 Comments</div>
+      <div class="likes" (click)="likedList()">{{likeCount}} Likes</div>
+      <div class="comment" (click)="commentedList()">44 Comments</div>
     </div>
     <div class="like-wrap">
       <div class="like" [ngClass]="{'liked': toggleLike}" (click)="likeFun()">
@@ -54,6 +43,7 @@
     </div>
   </div>
   <div class="comment-wrap">
+    <input type="text" class="for-comment-focus">
     <div class="commented-list">
         <app-comment-item></app-comment-item>
         <app-comment-item></app-comment-item>

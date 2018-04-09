@@ -159,6 +159,13 @@
     .comment-wrap{
         background: $color-bg-light;
         border-radius: 0 0 $border-radius $border-radius;
+        .for-comment-focus{
+            height: 0px;
+            width: 100%;
+            padding: 0;
+            border: 0;
+            display: block;
+        }
         // .commented-list{}
         .new-comment{
             display: none;
