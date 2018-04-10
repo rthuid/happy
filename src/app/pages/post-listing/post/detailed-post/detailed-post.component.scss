@@ -156,15 +156,28 @@
             }
         }
     }
+    .likes-wrap{
+        border-top: 1px solid $color-border;
+        padding-bottom: $padding;
+        display: none;
+        &.active{
+            display: block;
+        }
+        .head{
+            background: $color-bg;
+            font-weight: bold;
+            padding: $padding/2 $padding;
+            border-bottom: 1px solid $color-border;
+        }
+    }
     .comment-wrap{
         background: $color-bg-light;
         border-radius: 0 0 $border-radius $border-radius;
-        .for-comment-focus{
-            height: 0px;
-            width: 100%;
-            padding: 0;
-            border: 0;
-            display: block;
+        .head{
+            background: $color-bg;
+            font-weight: bold;
+            padding: $padding/2 $padding;
+            border-top: 1px solid $color-border;
         }
         // .commented-list{}
         .new-comment{

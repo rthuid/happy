@@ -13,6 +13,7 @@ export class DetailedPostComponent implements OnInit {
   toggleLike = false;
   liketext = ' Like';
   toggleFollowed = false;
+  likesWrap  = false;
   followtext = ' Follow';
   commentWrapOfst = 0;
   constructor(private modalService: NgbModal, private elRef: ElementRef) {}
@@ -48,6 +49,10 @@ export class DetailedPostComponent implements OnInit {
 
   // listing like and comment
   likedList() {
+    this.likesWrap = !this.likesWrap;
+    setTimeout(() => {
+      this.commentWrapOfst = this.elRef.nativeElement.querySelector('input.for-like-focus').focus();
+    }, 100);
   }
   commentedList() {
     this.commentWrapOfst = this.elRef.nativeElement.querySelector('input.for-comment-focus').focus();
