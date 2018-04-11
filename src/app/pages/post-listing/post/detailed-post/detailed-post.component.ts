@@ -15,7 +15,8 @@ export class DetailedPostComponent implements OnInit {
   toggleFollowed = false;
   likesWrap  = false;
   followtext = ' Follow';
-  commentWrapOfst = 0;
+  forFocus = 0;
+  wrap = document.getElementsByTagName('ngb-modal-window');
   constructor(private modalService: NgbModal, private elRef: ElementRef) {}
 
   ngOnInit() {
@@ -50,12 +51,12 @@ export class DetailedPostComponent implements OnInit {
   // listing like and comment
   likedList() {
     this.likesWrap = !this.likesWrap;
-    setTimeout(() => {
-      this.commentWrapOfst = this.elRef.nativeElement.querySelector('input.for-like-focus').focus();
-    }, 100);
+    this.forFocus = this.elRef.nativeElement.querySelector('div.like-wrap').offsetTop;
+    this.wrap[0].scrollTop = this.forFocus;
   }
   commentedList() {
-    this.commentWrapOfst = this.elRef.nativeElement.querySelector('input.for-comment-focus').focus();
+    this.forFocus = this.elRef.nativeElement.querySelector('div.comment-wrap').offsetTop;
+    this.wrap[0].scrollTop = this.forFocus;
   }
 
 }
