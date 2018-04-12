@@ -6,6 +6,7 @@ import { PostListingComponent } from './pages/post-listing/post-listing.componen
 import { NotificationComponent } from './layout/header/notification/notification.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, children: [
@@ -14,7 +15,8 @@ const routes: Routes = [
     { path: 'notification', component: NotificationComponent },
     { path: 'profileview', component: ProfileViewComponent }
   ] },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent }
 ];
 
 @NgModule({

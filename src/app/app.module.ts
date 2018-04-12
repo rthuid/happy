@@ -24,6 +24,7 @@ import { CommentItemComponent } from './pages/post-listing/post/comment-item/com
 import { DetailedPostComponent } from './pages/post-listing/post/detailed-post/detailed-post.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { LoginComponent } from './pages/login/login.component';
     CommentItemComponent,
     DetailedPostComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
