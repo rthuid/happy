@@ -86,12 +86,18 @@
     >.body{
         padding: 0 $padding;
         .item-wrap{
-            max-height: 500px;
-            overflow: hidden;
-            img,video{
-                width: 100%;
-                height: auto;
-                cursor: pointer;
+            max-height: none;            
+            .file-wrap{
+                background: $color-bg-light;
+                cursor: default;
+                img,video{
+                    width: auto;
+                    height: auto;
+                    margin: auto;
+                    display: block;
+                    max-width: 100%;
+                    cursor: default;
+                }
             }
             .item-text{
                 padding-bottom: $padding;
