@@ -4,13 +4,17 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
 import { ProfileViewComponent } from './pages/profile-view/profile-view.component';
 import { PostListingComponent } from './pages/post-listing/post-listing.component';
 import { NotificationComponent } from './layout/header/notification/notification.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
-  { path: 'user', component: UserProfileComponent },
-  { path: 'home', component: PostListingComponent },
-  { path: 'notification', component: NotificationComponent },
-  { path: 'profileview', component: ProfileViewComponent },
-  { path: '', component: PostListingComponent }
+  { path: '', component: HomeComponent, children: [
+    { path: '', component: PostListingComponent },
+    { path: 'user', component: UserProfileComponent },
+    { path: 'notification', component: NotificationComponent },
+    { path: 'profileview', component: ProfileViewComponent }
+  ] },
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({

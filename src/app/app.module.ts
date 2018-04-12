@@ -23,6 +23,7 @@ import { LikedListComponent } from './pages/post-listing/post/liked-list/liked-l
 import { CommentItemComponent } from './pages/post-listing/post/comment-item/comment-item.component';
 import { DetailedPostComponent } from './pages/post-listing/post/detailed-post/detailed-post.component';
 import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { HomeComponent } from './pages/home/home.component';
     LikedListComponent,
     CommentItemComponent,
     DetailedPostComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

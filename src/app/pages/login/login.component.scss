@@ -1,0 +1,29 @@
+@import '~sass/variables';
+@import '~sass/mixins';
+.login-page{
+    min-height: 100vh;
+    @include flex-master($flex-direction:row,$flex-wrap:nowrap,$align-content:center,$align-items:center);
+    @include gradient();    
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: $padding*2;
+    .main-wrap{
+        width: 350px;
+        max-width: 100%;
+        padding: $padding*2  $padding;
+        background: $color-white;
+        border-radius: $border-radius;
+        border: 1px solid $color-border;
+        .logo{
+            text-align: center;
+            padding-bottom: $padding*2;
+        }
+    }
+}
